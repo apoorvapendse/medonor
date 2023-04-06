@@ -3,6 +3,7 @@
   padding: 0;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:ital@1&display=swap');
 
 nav {
   background-color: rgb(10, 10, 11);
@@ -39,7 +40,7 @@ nav {
   display: flex;
   justify-content: center;
   align-items: center;
-  border:2px solid red;
+  /* border:2px solid red; */
   height:89.2vh;
 }
 .welcomeSection::before {
@@ -60,5 +61,34 @@ nav {
   height: 60vh;
   margin:auto;
   border-radius: 17px;
-  color: black;
+  font-weight: 500;
+  position: absolute;
+  
+  animation: transitionIn 1s;
+
+}
+
+@keyframes transitionIn {
+  from{
+    transform: translateY(-500px);
+  }
+  to{
+    transform: translateY(0px);
+    position:absolute;
+  
+  }
+  
+}
+
+.welcomeMessage h1{
+  text-align: center;
+  font-size: 3rem;
+  background-color:rgb(111, 246, 111);
+  border-radius: 7px;
+}
+#messageContent{
+  padding: 10px;
+  font-size: large;
+  font-family:'Montserrat', sans-serif; 
+  font-weight: 399;
 }
