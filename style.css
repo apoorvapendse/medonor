@@ -1,13 +1,22 @@
 * {
   margin: 0;
   padding: 0;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  box-sizing: border-box
+  font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  box-sizing: border-box;
 }
 @import url('https://fonts.googleapis.com/css2?family=Alkatra&family=Bebas+Neue&family=Montserrat:ital@1&display=swap');
 /* to animate on page reload */
 
 .container{
+
+  animation: 1s reloadTransition;
+  height:112vh;
+  background-color: transparent;
+  overflow-x: hidden;
+  background-color: black;
+
+}
+.AboutContainer{
   animation: 1s reloadTransition;
 }
 @keyframes reloadTransition {
@@ -27,7 +36,7 @@
 nav {
   background-color: rgb(10, 10, 11);
   /* border: 2px solid red; */
-  height: 12vh;
+  height: 10vh;
   display: flex;
   justify-content: flex-end;
   align-items: center;
@@ -48,8 +57,8 @@ nav {
 .navlist li a {
   color: rgb(149, 117, 255);
   font-weight: 550;
-  font-size: 2rem;
-  padding: 4px;
+  font-size: 1.8rem;
+  padding: 10px;
   border-radius: 7px;
   text-decoration: none;
   cursor: pointer;
@@ -115,7 +124,7 @@ nav {
 {
   padding: 10px;
   font-size: 1.45rem;
-  font-family: 'Alkatra', cursive;
+  font-family: system-ui;
   font-weight: 399;
   
 }
@@ -142,4 +151,40 @@ nav {
 .swiper-slide img{
   height: 70vh;
   width: 80vw;
+}
+
+.homeButtons{
+  padding:10px;
+  border-radius: 10px;
+  outline: none;
+  border: none;
+  cursor :pointer;
+  margin-right:10px;
+  font-size: x-large;
+  font-weight: 550;
+  transition: 0.66s all;
+  margin-left: 1.6rem;
+  box-shadow: 3px 4px 5px 3px rgb(119, 117, 117);
+}
+.homeButtons:hover{
+  background-color: green;
+  color: white;
+}
+.home-button-div{
+  /* margin-top:20vh; */
+  overflow-x:hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  top: 10px;
+  height: 10vh;
+}
+#welcomeHome{
+  color: whitesmoke;
+  font-size: 4rem;
+  text-align: center;
+  margin:10px;
+  font-style:italic;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
