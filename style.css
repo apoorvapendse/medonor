@@ -2,16 +2,43 @@
   margin: 0;
   padding: 0;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  box-sizing: border-box
 }
-@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:ital@1&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Alkatra&family=Bebas+Neue&family=Montserrat:ital@1&display=swap');
+/* to animate on page reload */
+
+.container{
+  animation: 1s reloadTransition;
+}
+@keyframes reloadTransition {
+  from{
+    opacity: 0;
+    transform:rotateX('-10deg')
+
+  }
+  to{
+    opacity:1;
+    transform: rotateX('0deg');
+  }
+  
+}
+
 
 nav {
   background-color: rgb(10, 10, 11);
   /* border: 2px solid red; */
-  height: 10vh;
+  height: 12vh;
   display: flex;
   justify-content: flex-end;
   align-items: center;
+}
+.icon{
+  background-color: white;
+  position: absolute;
+  left:10px;
+  width: inherit;
+  height: inherit;
+  border-radius: 100%;
 }
 .navlist {
   color: white;
@@ -19,7 +46,7 @@ nav {
   display: flex;
 }
 .navlist li a {
-  color: white;
+  color: rgb(149, 117, 255);
   font-weight: 550;
   font-size: 2rem;
   padding: 4px;
@@ -28,6 +55,10 @@ nav {
   cursor: pointer;
   margin: 0px 9px;
   transition: all 0.7s;
+}
+.activeLink{
+  background-color: white;
+  color: black;
 }
 .navlist li a:hover {
   /* text-decoration: underline; */
@@ -52,7 +83,7 @@ nav {
   width:100vw;
   height: 100vh;
   z-index: -1;
-  opacity: 0.6;
+  opacity: 1;
   
 }
 .welcomeMessage{
@@ -80,15 +111,35 @@ nav {
   
 }
 
+#messageContent
+{
+  padding: 10px;
+  font-size: 1.45rem;
+  font-family: 'Alkatra', cursive;
+  font-weight: 399;
+  
+}
 .welcomeMessage h1{
   text-align: center;
   font-size: 3rem;
   background-color:rgb(111, 246, 111);
   border-radius: 7px;
 }
-#messageContent{
-  padding: 10px;
-  font-size: large;
-  font-family:'Montserrat', sans-serif; 
-  font-weight: 399;
+
+
+.swiper-wrapper{
+  height: 80vh;
+  width: 80vw;
+}
+
+.swiper-slide
+{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 80vw;
+}
+.swiper-slide img{
+  height: 70vh;
+  width: 80vw;
 }

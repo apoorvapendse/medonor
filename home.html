@@ -1,0 +1,100 @@
+
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css"
+    />
+    <link rel="stylesheet" href="style.css">
+
+    
+    
+    <title>Medonor</title>
+    
+    <div class="container">
+  </head>
+  <body>
+    <header>
+      <nav>
+        <img src="https://cdn-icons-gif.flaticon.com/6449/6449707.gif" alt="" srcset="" height="100px" width="100px" class="icon" >
+        <ul class="navlist">
+          <li><a href="/home.html" class="activeLink"> Home </a></li>
+          <li>
+            <a href="/about.html"> About </a>
+          </li>
+          <li>
+            <a href=""> Contact </a>
+          </li>
+          <li>
+            <a href="">Donate</a>
+            
+          </li>
+        </ul>
+      </nav>
+    </header>
+    
+    <main class="imageSlider">
+      <div class="swiper">
+        <!-- Additional required wrapper -->
+        <div class="swiper-wrapper">
+          <!-- Slides -->
+          <div class="swiper-slide"><img src="/images/blood-pressure-monitor.jpg" alt="" srcset=""></div>
+          <div class="swiper-slide"><img src="/images/cane.jpg"  alt="" srcset=""></div>
+          <div class="swiper-slide"><img src="/images/walker.jpg" alt=""></div>
+          <div class="swiper-slide"><img src="/images/danny-nee-wlutZH5oW_4-unsplash.jpg"  alt=""></div>
+          ...
+        </div>
+        <!-- If we need pagination -->
+        <div class="swiper-pagination"></div>
+        
+        <!-- If we need navigation buttons -->
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-button-next"></div>
+        
+        <!-- If we need scrollbar -->
+        <!-- <div class="swiper-scrollbar"></div> -->
+      </div>
+      
+      
+    </main>
+    
+    
+    
+    
+    
+    
+  </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+    <script>
+      
+      const swiper = new Swiper('.swiper', {
+        // Optional parameters
+        direction: 'horizontal',
+        loop: true,
+        autoplay:{
+          delay:2000,
+          disableOnInteraction:false
+        },
+      // If we need pagination
+      pagination: {
+        el: '.swiper-pagination',
+        clickable:true,
+      },
+    
+      // Navigation arrows
+      navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+      },
+      
+      // And if we need scrollbar
+      
+    });  
+    </script>
+  
+  </body>
+    </html>
