@@ -1,0 +1,93 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+}
+.container{
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(0, 0, 0);
+}
+.logo-email-container{
+    display: flex;
+    width: 70vw;
+    justify-content: space-evenly;
+    
+}
+.logo-email-container p{
+    color: white;
+    text-align: center;
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+video{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#logoVideo{
+   
+    border-radius: 100%;
+    /* position:absolute; */
+    margin:auto;
+}
+.left{
+    /* background-color: blue; */
+    width: 20rem;
+    
+}
+.right #loginForm{
+    display: flex;
+    flex-direction: column;
+    margin-top: 2.5rem;
+}
+.right #loginForm input{
+    border-radius: 10px;
+    outline: none;
+    padding: 10px ;
+    margin:5px;
+    text-align: center;
+    font-size: 1rem;
+    transition: all 0.7s;
+    border:none;
+}
+.right #loginForm input:hover{
+    padding:10px 3rem;
+}
+.right #loginForm button{
+    border:none;
+    background-color: rgb(26, 237, 7);
+    font-weight: 800; 
+    color: rgb(8, 8, 8);
+    padding:0.6rem;
+    border-radius: 14px;
+    font-size: 1.3rem;  
+    transition: 1s; 
+}
+.right #loginForm button:hover{
+    color:white;
+    background-color: rgb(7, 182, 7);
+    text-shadow: 2px 2px black;
+
+}
+#registerForm{
+    margin-top: 2rem;
+}
+#registerForm button{
+    color: white;
+    font-weight: bold;
+    padding:0.8rem;
+    background-color: rgb(130, 4, 248);
+    display:block;
+    margin:auto;
+    border-radius: 14px;
+    border:none;
+    transition: 0.8s;
+}
+#registerForm button:hover{
+    background-color: indigo;
+    text-shadow: 2px 2px black;
+}
