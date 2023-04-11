@@ -10,6 +10,9 @@ app.get("/",(req,res)=>{
     res.render("defaultEntry.ejs");
 })
 
+app.get("/home",(req,res)=>{
+    res.render("home.ejs");
+})
 app.listen(4000,()=>{
     console.log("server is up")
 })
