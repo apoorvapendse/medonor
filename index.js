@@ -1,10 +1,16 @@
 import express from "express";
 import path from "path";
-
+import mongoose from "mongoose";
 
 
 const app = express();
 app.use(express.static(path.join(path.resolve(),"public")));
+
+mongoose.connect("mongodb://localhost:27017",{
+    dbName:"Medonor"
+}).then(()=>console.log("database connected")).catch((e)=>{console.log(e)})
+
+
 
 app.get("/",(req,res)=>{
     res.render("defaultEntry.ejs");
