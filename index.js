@@ -13,6 +13,10 @@ app.get("/",(req,res)=>{
 app.get("/home",(req,res)=>{
     res.render("home.ejs");
 })
+
+app.get("/about",(req,res)=>{
+    res.render("about.ejs");
+})
 app.listen(4000,()=>{
     console.log("server is up")
 })
