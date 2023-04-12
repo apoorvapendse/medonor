@@ -1,12 +1,24 @@
 import express, { urlencoded } from "express";
 import path from "path";
 import mongoose from "mongoose";
+import cookieParser from "cookie-parser";
 
 
 const app = express();
 app.use(express.static(path.join(path.resolve(),"public")));
 app.use(express.urlencoded({extended:true}));
+app.use(cookieParser());
 
+const checkAuthentication = async (req,res,next)=>{
+    const token = req.cookies.token;
+    if(!token)
+    {
+        res.render("login.ejs",{message:"welcome to medonor"})
+    }
+    
+    next();
+
+}
 
 mongoose.connect("mongodb://localhost:27017",{
     dbName:"Medonor"
@@ -23,8 +35,8 @@ const Users = mongoose.model("users",userSchema);
 
 
 
-app.get("/",(req,res)=>{
-    res.render("login.ejs",{message:"WELCOME TO MEDONOR!!!"});
+app.get("/",checkAuthentication,(req,res)=>{
+    res.render("/home")
 })
 
 app.get("/home",(req,res)=>{
@@ -70,7 +82,11 @@ app.post("/login",async (req,res)=>{
    else{
     if(checkUser.password ===password)
     {
+        res.cookie("token",checkUser.id,{
+            httpOnly:true,
+            expires:new Date(Date.now() + 30000)
 
+        })
         res.redirect("/home");
     }
     else{
