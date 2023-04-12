@@ -8,15 +8,19 @@ const app = express();
 app.use(express.static(path.join(path.resolve(),"public")));
 app.use(express.urlencoded({extended:true}));
 app.use(cookieParser());
-
+app.set("view engine","ejs");
 const checkAuthentication = async (req,res,next)=>{
     const token = req.cookies.token;
+    // console.log(req.cookies.token)
+    console.log("token is:",token)
     if(!token)
     {
         res.render("login.ejs",{message:"welcome to medonor"})
     }
-    
-    next();
+    else{
+
+        next();
+    }
 
 }
 
@@ -35,9 +39,11 @@ const Users = mongoose.model("users",userSchema);
 
 
 
-app.get("/",checkAuthentication,(req,res)=>{
-    res.render("/home")
-})
+app.get("/",checkAuthentication,((req,res)=>{
+    res.render("home.ejs")
+}))
+    
+
 
 app.get("/home",(req,res)=>{
     res.render("home.ejs");
@@ -69,6 +75,8 @@ app.post("/register",async (req,res)=>{
         password:password
     }).then(()=>{
         console.log("user added with name:",name);
+        res.render("home.ejs");
+        
     })
 })
 
