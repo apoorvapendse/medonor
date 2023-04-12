@@ -24,7 +24,7 @@ const Users = mongoose.model("users",userSchema);
 
 
 app.get("/",(req,res)=>{
-    res.render("defaultEntry.ejs");
+    res.render("login.ejs",{message:"WELCOME TO MEDONOR!!!"});
 })
 
 app.get("/home",(req,res)=>{
@@ -34,15 +34,38 @@ app.get("/home",(req,res)=>{
 app.get("/about",(req,res)=>{
     res.render("about.ejs");
 })
-app.listen(4000,()=>{
-    console.log("server is up")
+app.get("/register",(req,res)=>{
+    res.render("register.ejs",{message:"WELCOME TO MEDONOR!!!"});
 })
+app.get("/login",(req,res)=>{
+    res.render("login.ejs",{message:"Welcome back!"})
+})
+
+app.post("/register",async (req,res)=>{
+    const{name,email,password} = req.body;
+    const check = await Users.findOne({email:email});
+    if(check!=null)
+    {
+        res.render("login.ejs",{message:"account already exists, please login"})
+        return;
+    }
+
+
+    Users.create({
+        name:name,
+        email:email,
+        password:password
+    }).then(()=>{
+        console.log("user added with name:",name);
+    })
+})
+
 app.post("/login",async (req,res)=>{
    const {email,password} = req.body;
    const checkUser = await Users.findOne({email});
    console.log(checkUser);
    if(!checkUser){
-    res.redirect("/register");
+    res.render("register.ejs",{message:"please register first before logging in"});
    }
    else{
     if(checkUser.password ===password)
@@ -51,13 +74,13 @@ app.post("/login",async (req,res)=>{
         res.redirect("/home");
     }
     else{
-        console.log("wrong password")
+        res.render("login.ejs",{message:"invalid password!"});
     }
    }
 
     
 })
 
-app.get("/register",(req,res)=>{
-    res.render("register.ejs");
+app.listen(4000,()=>{
+    console.log("server is up")
 })

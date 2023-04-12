@@ -91,3 +91,33 @@ video{
     background-color: indigo;
     text-shadow: 2px 2px black;
 }
+
+.errorMessage{
+    color:rebeccapurple;
+    font-weight: bold;
+    display: block;
+    position: absolute;
+    top:-11rem;
+    padding:2rem 10rem;
+    font-size: 1.2rem;
+    background-color: rgb(255, 255, 255);
+    border-radius: 0px 0px 12px 12px;
+    animation:3s errorDisplay;
+}
+
+@keyframes errorDisplay {
+    0%{
+        top:-2rem;
+    }
+
+    25%{
+        top:2rem;
+    }
+    50%{
+        top:0rem;
+    }
+    100%{
+        top:-10rem;
+    }
+    
+}
