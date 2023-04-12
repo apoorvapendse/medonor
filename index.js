@@ -63,7 +63,7 @@ app.post("/register",async (req,res)=>{
 app.post("/login",async (req,res)=>{
    const {email,password} = req.body;
    const checkUser = await Users.findOne({email});
-   console.log(checkUser);
+//    console.log(checkUser);
    if(!checkUser){
     res.render("register.ejs",{message:"please register first before logging in"});
    }
