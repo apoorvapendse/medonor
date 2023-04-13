@@ -34,7 +34,7 @@
 
 
 nav {
-  background-color: rgb(10, 10, 11);
+  background-color: rgb(31, 31, 33);
   /* border: 2px solid red; */
   height: 10vh;
   display: flex;
@@ -137,8 +137,8 @@ nav {
 
 
 .swiper-wrapper{
-  height: 80vh;
-  width: 80vw;
+  height: 60vh;
+  width: 50vw;
 }
 
 .swiper-slide
@@ -150,7 +150,7 @@ nav {
 }
 .swiper-slide img{
   height: 70vh;
-  width: 80vw;
+  width: 50vw;
 }
 
 .homeButtons{

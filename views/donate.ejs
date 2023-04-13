@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Medonor</title>
+    <link rel="stylesheet" href="donate.css">
+</head>
+<body>
+    <form action="/donate" method="post" id="donateForm">
+       <label for="medicalEquipment">Select Equipment to Donate:</label>
+       <select name="equipment" id="">
+        <option value="wheelchair">Wheelchair</option>
+        <option value="walker">Walker</option>
+        <option value="cane">Cane</option>
+        <option value="stethoscope">stethoscope</option>
+       </select>
+
+       <label for="quality">Select Equipment Quality:</label>
+       <select name="quality" id="">
+        <option value="brand-new">brand new</option>
+        <option value="good">good</option>
+        <option value="used">used</option>
+        <option value="old">old</option>
+       </select>
+
+       <button type:"submit">Submit</button>
+
+    </form>
+    
+</body>
+</html>

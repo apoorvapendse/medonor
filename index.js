@@ -42,7 +42,9 @@ const Users = mongoose.model("users",userSchema);
 app.get("/",checkAuthentication,((req,res)=>{
     res.render("home.ejs")
 }))
-    
+app.get("/donate",(req,res)=>{
+    res.render("donate.ejs");
+})
 
 
 app.get("/home",(req,res)=>{
@@ -114,6 +116,11 @@ app.post("/login",async (req,res)=>{
    }
 
     
+})
+
+app.post("/donate",(req,res)=>{
+    // console.log("donate button clicked")
+    // console.log(req.body);
 })
 
 app.listen(4000,()=>{

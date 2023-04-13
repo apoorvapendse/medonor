@@ -1,0 +1,24 @@
+*{
+    margin:0;
+    padding:0;
+
+}
+form{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100vw;
+   
+}
+form::after{
+    content:"";
+    width:100vw ;
+    height: 100vh;
+    background-image: url("/public/images/donatebackground.png") ;
+    position: absolute;
+    left:0;
+    top:0;
+    /* z-index: -2; */
+    
+}
