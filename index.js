@@ -73,9 +73,20 @@ app.post("/register",async (req,res)=>{
         name:name,
         email:email,
         password:password
-    }).then(()=>{
+    }).then(async ()=>{
         console.log("user added with name:",name);
+        const newUser = await Users.findOne({email})
+        res.cookie("token",newUser.id,{
+            httpOnly:true,
+            expires: new Date(Date.now() + 30000)
+
+        })
+
+
+
         res.render("home.ejs");
+       
+        // res.redirect("/home");
         
     })
 })

@@ -93,15 +93,16 @@ video{
 }
 
 .errorMessage{
-    color:rebeccapurple;
+    color:rgb(255, 255, 255);
     font-weight: bold;
     display: block;
     position: absolute;
     top:-11rem;
     padding:2rem 10rem;
     font-size: 1.2rem;
-    background-color: rgb(255, 255, 255);
+    background-color: rgb(36, 35, 35);
     border-radius: 0px 0px 12px 12px;
+    box-shadow: 3px 7px 10px  white;
     animation:3s errorDisplay;
 }
 
