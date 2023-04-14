@@ -1,13 +1,22 @@
 import express, { urlencoded } from "express";
 import path from "path";
+import bcrypt from "bcrypt"
 import mongoose from "mongoose";
 import cookieParser from "cookie-parser";
+import session from "express-session";
 
 
 const app = express();
+
+app.use(session({
+    cookie:{maxAge:30000},
+    secret:"some secret",
+    saveUninitialized:false
+}))
 app.use(express.static(path.join(path.resolve(),"public")));
 app.use(express.urlencoded({extended:true}));
 app.use(cookieParser());
+app.use(express.json());
 app.set("view engine","ejs");
 const checkAuthentication = async (req,res,next)=>{
     const token = req.cookies.token;
@@ -60,9 +69,15 @@ app.get("/register",(req,res)=>{
 app.get("/login",(req,res)=>{
     res.render("login.ejs",{message:"Welcome back!"})
 })
+app.get("/users/all",async (req,res)=>{
+    const users = await Users.find();
+    res.json(users);
+
+})
 
 app.post("/register",async (req,res)=>{
     const{name,email,password} = req.body;
+    const hashedPassword = await bcrypt.hash(password,10);
     const check = await Users.findOne({email:email});
     if(check!=null)
     {
@@ -74,10 +89,11 @@ app.post("/register",async (req,res)=>{
     Users.create({
         name:name,
         email:email,
-        password:password
+        password:hashedPassword
     }).then(async ()=>{
         console.log("user added with name:",name);
         const newUser = await Users.findOne({email})
+        req.session.usedID = newUser.id;
         res.cookie("token",newUser.id,{
             httpOnly:true,
             expires: new Date(Date.now() + 30000)
@@ -101,8 +117,9 @@ app.post("/login",async (req,res)=>{
     res.render("register.ejs",{message:"please register first before logging in"});
    }
    else{
-    if(checkUser.password ===password)
+    if(await bcrypt.compare(req.body.password,checkuser.password))
     {
+        req.session.user_id = checkUser.id; 
         res.cookie("token",checkUser.id,{
             httpOnly:true,
             expires:new Date(Date.now() + 30000)
@@ -119,8 +136,7 @@ app.post("/login",async (req,res)=>{
 })
 
 app.post("/donate",(req,res)=>{
-    // console.log("donate button clicked")
-    // console.log(req.body);
+  
 })
 
 app.listen(4000,()=>{
