@@ -27,7 +27,7 @@ const checkAuthentication = async (req,res,next)=>{
         res.render("login.ejs",{message:"welcome to medonor"})
     }
     else{
-
+        req.session.user_id = token;
         next();
     }
 
@@ -40,7 +40,10 @@ mongoose.connect("mongodb://localhost:27017",{
 const userSchema = new mongoose.Schema({
 name:String,
 email:String,
-password:String
+password:String,
+donor:Boolean,
+products:Object,
+
 })
 
 const Users = mongoose.model("users",userSchema);
@@ -96,7 +99,7 @@ app.post("/register",async (req,res)=>{
         req.session.usedID = newUser.id;
         res.cookie("token",newUser.id,{
             httpOnly:true,
-            expires: new Date(Date.now() + 30000)
+            expires: new Date(Date.now() + 300000)
 
         })
 
@@ -117,9 +120,10 @@ app.post("/login",async (req,res)=>{
     res.render("register.ejs",{message:"please register first before logging in"});
    }
    else{
-    if(await bcrypt.compare(req.body.password,checkuser.password))
+    if(await bcrypt.compare(req.body.password,checkUser.password))
     {
-        req.session.user_id = checkUser.id; 
+        // req.session.user_id = checkUser.id; 
+        // console.log("id of logged in user is",req.session.user_id);
         res.cookie("token",checkUser.id,{
             httpOnly:true,
             expires:new Date(Date.now() + 30000)
@@ -135,7 +139,15 @@ app.post("/login",async (req,res)=>{
     
 })
 
-app.post("/donate",(req,res)=>{
+app.post("/donate", async (req,res)=>{
+    const currentUserID = req.cookies.token;
+    console.log("current user id",currentUserID)
+   const currentUser = await Users.findOne({_id:currentUserID})
+ 
+   console.log(currentUser)
+    // currentUser.products = req.body.equipment;
+
+
   
 })
 
