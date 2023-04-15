@@ -48,3 +48,29 @@ form button{
 form button:hover{
     box-shadow: 2px 4px 2px 2px rgb(242, 240, 240);
 }
+
+.notifySuccess{
+    position: absolute;
+    top:-5rem;
+    margin:auto;
+    padding:20px 40px;
+    background-color: green;
+    color: white;
+    font-size: 1rem;
+    border-radius: 10px;
+    animation:3s transitionMessage
+}
+@keyframes transitionMessage{
+    25%{
+        /* left:30rem; */
+        top:1rem;
+    }
+    
+    
+    100%{
+        /* left:-100px; */
+        top:-5rem;
+        display:none;
+        
+    }
+}

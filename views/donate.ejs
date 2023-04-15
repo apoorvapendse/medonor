@@ -28,6 +28,26 @@
        <button type:"submit">Submit</button>
 
     </form>
+    <div id="successMessage"><%= message %></div>
     
+
+
+
+    <script>
+        const slidingMessage = document.querySelector("#successMessage");
+        
+        async function slidingAnimation(){
+            slidingMessage.classList.add("notifySuccess");    
+        //    await setTimeout(() => {
+        //        slidingMessage.classList.remove("notifySuccess")
+        //        slidingMessage.innerText="";
+        //     }, 3000);
+        }
+        
+        if(slidingMessage.innerHTML !==""){
+          slidingAnimation();
+        }
+
+    </script>
 </body>
 </html>
