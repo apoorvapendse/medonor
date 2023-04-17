@@ -41,7 +41,7 @@ const userSchema = new mongoose.Schema({
     email: String,
     password: String,
     donor: Boolean,
-    products: Object,
+    products: Array,
 
 })
 
@@ -92,7 +92,7 @@ app.post("/register", async (req, res) => {
         email: email,
         password: hashedPassword,
         donor: true,
-        products: { equipment: "temp", quality: "good" }
+        products: []
     }).then(async () => {
         console.log("user added with name:", name);
         const newUser = await Users.findOne({ email })
@@ -142,9 +142,11 @@ app.post("/donate", async (req, res) => {
     const currentUserID = req.cookies.token;
     // console.log("current user id",currentUserID)
     try {
+        console.log(req.body)
         const currentUser = await Users.updateOne({ _id: currentUserID }, {
-            $set: {
-                products: req.body
+            $push: {
+                
+                products:new Object(req.body)
             }
         })
     } catch (error) {

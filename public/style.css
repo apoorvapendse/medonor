@@ -55,7 +55,7 @@ nav {
   display: flex;
 }
 .navlist li a {
-  color: rgb(149, 117, 255);
+  color: rgb(255, 255, 255);
   font-weight: 550;
   font-size: 1rem;
   padding: 10px;
@@ -65,14 +65,20 @@ nav {
   margin: 0px 9px;
   transition: all 0.7s;
 }
-.activeLink{
-  background-color: white;
-  color: black;
-}
+
 .navlist li a:hover {
   /* text-decoration: underline; */
   background-color: white;
-  color: black;
+  color: blueviolet;
+  box-shadow: 2px 2px 2px 2px blueviolet;
+}
+.activeLink{
+  color:black;
+  background-color: rgb(127, 0, 245);
+  box-shadow: 2px 2px 2px 2px white
+  ;
+  font-weight: bold;
+  text-decoration: underline;
 }
 .welcomeSection{
   
