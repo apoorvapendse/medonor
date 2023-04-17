@@ -10,7 +10,20 @@ body{
     justify-content: center;
     align-items: center;
     background-color: azure;
+    animation: 1s reloadTransition;
     }
+    @keyframes reloadTransition {
+        from{
+          opacity: 0;
+          transform:rotateX('-10deg')
+      
+        }
+        to{
+          opacity:1;
+          transform: rotateX('0deg');
+        }
+        
+      }
 form{
     display: flex;
     flex-direction: column;

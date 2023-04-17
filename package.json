@@ -15,6 +15,8 @@
     "ejs": "^3.1.9",
     "express": "^4.18.2",
     "express-session": "^1.17.3",
-    "mongoose": "^7.0.3"
+    "mongoose": "^7.0.3",
+    "typed.js": "^2.0.15",
+    "typewriter-effect": "^2.19.0"
   }
 }

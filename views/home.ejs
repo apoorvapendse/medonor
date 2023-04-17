@@ -38,7 +38,7 @@
     
     <main class="imageSlider">
       <h1 id="welcomeHome">WELCOME TO MEDONOR</h1>
-
+      <div id="typedText"></div>
 
       <div class="swiper">
         <!-- Additional required wrapper -->
@@ -97,6 +97,33 @@
       
     });  
     </script>
+
+<script src="https://unpkg.com/typewriter-effect@latest/dist/core.js">
+ 
+</script>
+<script>
+   var app = document.getElementById('typedText');
+
+var typewriter = new Typewriter(app, {
+  loop: true,
+  delay: 75,
+});
+
+typewriter
+  .pauseFor(0)
+  .typeString('Giving <strong style="font-size:2.2rem;color:yellow;background-color:black;font-weight:bold ">hope</strong>, one <strong style="font-size:2.2rem;color:green;background-color:white;font-weight:bold">equipment</strong> at a time!')
+  .pauseFor(500)
+  .deleteAll(37)
+  .typeString('Donate <strong style="font-weight:bold;color:red;font-size:2.2rem background-color:white ">TODAY</strong>, heal a <strong style="font-size:2.2rem;color:green;" >L</strong><strong style="font-size:2.2rem;color:blueviolet" >I</strong><strong style="font-size:2.2rem;color:yellow">F</strong><strong style="font-size:2.2rem;color:red">E</strong> tomorrow.')
+  .pauseFor(500)
+  .deleteAll(28)
   
+  .start();
+
+
+
+</script>
+
+
   </body>
     </html>

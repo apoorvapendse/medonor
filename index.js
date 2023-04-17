@@ -125,7 +125,7 @@ app.post("/login", async (req, res) => {
             // console.log("id of logged in user is",req.session.user_id);
             res.cookie("token", checkUser.id, {
                 httpOnly: true,
-                expires: new Date(Date.now() + 30000)
+                expires: new Date(Date.now() + 30000000)
 
             })
             res.redirect("/home");

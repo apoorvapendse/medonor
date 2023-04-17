@@ -10,11 +10,23 @@
 .container{
 
   animation: 1s reloadTransition;
-  height:112vh;
-  background-color: transparent;
-  overflow-x: hidden;
-  background-color: black;
+  height:inherit;
+  /* background-color: transparent; */
+  /* overflow-x: hidden; */
+  /* background-color: transparent; */
 
+}
+body::before{
+  content:"";
+  position:fixed;
+  background: url("https://rare-gallery.com/uploads/posts/523906-calm-waters.jpg") no-repeat ;
+  top:0;
+  left:0;
+  width:100vw;
+  min-height: 100vh;
+  background-size: cover;
+  z-index: -1;
+  opacity: 1;
 }
 .AboutContainer{
   animation: 1s reloadTransition;
@@ -34,11 +46,11 @@
 
 
 nav {
-  background-color: rgb(31, 31, 33);
+  background-color: rgba(31, 31, 33, 0.307);
   /* border: 2px solid red; */
   height: 10vh;
   display: flex;
-  justify-content: flex-end;
+  justify-content: center;
   align-items: center;
 }
 .icon{
@@ -58,11 +70,12 @@ nav {
   color: rgb(255, 255, 255);
   font-weight: 550;
   font-size: 1rem;
-  padding: 10px;
+  font-weight: bold;
+  padding: 10px 2rem;
   border-radius: 7px;
   text-decoration: none;
   cursor: pointer;
-  margin: 0px 9px;
+  margin:0px 3rem;
   transition: all 0.7s;
 }
 
@@ -71,6 +84,7 @@ nav {
   background-color: white;
   color: blueviolet;
   box-shadow: 2px 2px 2px 2px blueviolet;
+  
 }
 .activeLink{
   color:black;
@@ -80,6 +94,22 @@ nav {
   font-weight: bold;
   text-decoration: underline;
 }
+
+
+#typedText{
+  text-align: center;
+  color: rgb(0, 0, 0);
+  font-size: 2rem;
+  background-color: white
+  ;
+  width:54vw;
+  margin:2rem auto;
+  border-radius: 12px;
+  padding:20px 0px;
+  
+}
+
+
 .welcomeSection{
   
   background-color: transparent;
@@ -143,7 +173,7 @@ nav {
 
 
 .swiper-wrapper{
-  height: 60vh;
+  height: 80vh;
   width: 50vw;
 }
 
@@ -153,6 +183,7 @@ nav {
   justify-content: center;
   align-items: center;
   width: 80vw;
+  height: 70vh;
 }
 .swiper-slide img{
   height: 70vh;
