@@ -19,7 +19,7 @@
 body::before{
   content:"";
   position:fixed;
-  background: url("https://rare-gallery.com/uploads/posts/523906-calm-waters.jpg") no-repeat ;
+  background: url("https://wallpaperaccess.com/full/4425577.jpg") no-repeat ;
   top:0;
   left:0;
   width:100vw;
@@ -81,14 +81,14 @@ nav {
 
 .navlist li a:hover {
   /* text-decoration: underline; */
-  background-color: white;
-  color: blueviolet;
-  box-shadow: 2px 2px 2px 2px blueviolet;
+  background-color: rgb(255, 255, 255);
+  color: rgb(43, 162, 226);
+  box-shadow: 2px 2px 2px 2px rgb(43, 217, 226);
   
 }
 .activeLink{
   color:black;
-  background-color: rgb(127, 0, 245);
+  background-color: rgb(0, 184, 245);
   box-shadow: 2px 2px 2px 2px white
   ;
   font-weight: bold;
