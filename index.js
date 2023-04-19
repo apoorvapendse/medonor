@@ -54,15 +54,27 @@ app.get("/", checkAuthentication, ((req, res) => {
     res.render("home.ejs")
 }))
 app.get("/donate", (req, res) => {
+    if(!req.cookies.token)
+    {
+        res.render("login.ejs",{message:"please login first"})
+    }
     res.render("donate.ejs",{message:""});
 })
 
 
 app.get("/home", (req, res) => {
+    if(!req.cookies.token)
+    {
+        res.render("login.ejs",{message:"please login first"})
+    }
     res.render("home.ejs");
 })
 
 app.get("/about", (req, res) => {
+    if(!req.cookies.token)
+    {
+        res.render("login.ejs",{message:"please login first"})
+    }
     res.render("about.ejs");
 })
 app.get("/register", (req, res) => {
