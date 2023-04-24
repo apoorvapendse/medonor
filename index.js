@@ -108,7 +108,7 @@ app.post("/register", async (req, res) => {
     }).then(async () => {
         console.log("user added with name:", name);
         const newUser = await Users.findOne({ email })
-        req.session.usedID = newUser.id;
+        
         res.cookie("token", newUser.id, {
             httpOnly: true,
             expires: new Date(Date.now() + 300000)
