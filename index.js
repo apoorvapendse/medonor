@@ -4,6 +4,7 @@ import bcrypt from "bcrypt"
 import mongoose from "mongoose";
 import cookieParser from "cookie-parser";
 import session from "express-session";
+import jwt from 'jsonwebtoken'
 // ykeuueijasldkfjlkasdjflkajskljdfklsajd
 
 const app = express();
@@ -109,7 +110,10 @@ app.post("/register", async (req, res) => {
         console.log("user added with name:", name);
         const newUser = await Users.findOne({ email })
         
-        res.cookie("token", newUser.id, {
+
+        const token = jwt.sign({id:newUser.id},'apoorva')
+        console.log("jwt token is:",token);
+        res.cookie("token", token, {
             httpOnly: true,
             expires: new Date(Date.now() + 30000000)
 
@@ -135,7 +139,9 @@ app.post("/login", async (req, res) => {
         if (await bcrypt.compare(req.body.password, checkUser.password)) {
             // req.session.user_id = checkUser.id; 
             // console.log("id of logged in user is",req.session.user_id);
-            res.cookie("token", checkUser.id, {
+            const token = jwt.sign({id:checkUser.id},'apoorva')
+            console.log("jwt token is:",token);
+            res.cookie("token", token, {
                 httpOnly: true,
                 expires: new Date(Date.now() + 30000000)
 
@@ -162,11 +168,12 @@ app.post("/logout",(async(req,res)=>{
 }))
 
 app.post("/donate", async (req, res) => {
-    const currentUserID = req.cookies.token;
+    const currentUserID = jwt.verify(req.cookies.token,'apoorva') ;
+    console.log("current id:",currentUserID);
     // console.log("current user id",currentUserID)
     try {
         console.log(req.body)
-        const currentUser = await Users.updateOne({ _id: currentUserID }, {
+        const currentUser = await Users.updateOne({ _id: currentUserID.id }, {
             $push: {
                 
                 products:new Object(req.body)
