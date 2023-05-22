@@ -53,6 +53,21 @@ nav {
   justify-content: center;
   align-items: center;
 }
+.logoutBtn{
+  background-color: red;
+  color:white;
+ position:absolute;
+  right:1rem;
+  top:1%;
+  margin:12px;
+  padding:8px 14px;
+transition:0.3s all;
+cursor:pointer;
+}
+.logoutBtn:hover{
+  color:black;
+  background-color: rgb(247, 167, 167);
+}
 .icon{
   background-color: white;
   position: absolute;

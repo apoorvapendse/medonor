@@ -9,7 +9,7 @@ import session from "express-session";
 const app = express();
 
 app.use(session({
-    cookie: { maxAge: 3000000 },
+    cookie: { maxAge: 300000000 },
     secret: "some secret",
     saveUninitialized: false
 }))
@@ -111,12 +111,12 @@ app.post("/register", async (req, res) => {
         
         res.cookie("token", newUser.id, {
             httpOnly: true,
-            expires: new Date(Date.now() + 300000)
+            expires: new Date(Date.now() + 30000000)
 
         })
 
 
-
+        
         res.render("home.ejs");
 
         // res.redirect("/home");
@@ -149,6 +149,17 @@ app.post("/login", async (req, res) => {
 
 
 })
+
+app.post("/logout",(async(req,res)=>{
+   try {
+    
+       await res.clearCookie("token")
+   } catch (error) {
+    console.log(error);
+   }
+   res.render("login.ejs",{message:'Welcome'})
+
+}))
 
 app.post("/donate", async (req, res) => {
     const currentUserID = req.cookies.token;
