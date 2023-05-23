@@ -9,7 +9,9 @@
     <link rel="stylesheet" href="donate.css">
 </head>
 
-<nav style="position:absolute;top:0px">
+<div class="donationContainer">
+
+  <nav style="position:absolute;top:0px">
     <!-- <img src="https://cdn-icons-gif.flaticon.com/6449/6449707.gif" alt="" srcset="" height="100px" width="100px" class="icon" > -->
     <ul class="navlist" >
       <li><a href="/home" > Home </a></li>
@@ -23,53 +25,54 @@
         <a href="/donate" class="activeLink">Donate</a>
         
       </li>
-
-       
-        
-    
+      
+      
+      
+      
     </ul>
     
   </nav>
   <form method="post" action="/logout">
-
+    
     <button class="logoutBtn" style="bottom:12px;top:inherit;" type="submit">Logout</button>
   </form>
-
-
-    <form action="/donate" method="post" id="donateForm">
-       <label for="medicalEquipment">Select Equipment to Donate:</label>
+  
+  
+  <form action="/donate" method="post" id="donateForm">
+    <label for="medicalEquipment">Select Equipment to Donate:</label>
        <select name="equipment" id="">
         <option value="wheelchair">Wheelchair</option>
         <option value="walker">Walker</option>
         <option value="cane">Cane</option>
         <option value="stethoscope">stethoscope</option>
-       </select>
-
-       <label for="quality">Select Equipment Quality:</label>
-       <select name="quality" id="">
+      </select>
+      
+      <label for="quality">Select Equipment Quality:</label>
+      <select name="quality" id="">
         <option value="brand-new">brand new</option>
         <option value="good">good</option>
         <option value="used">used</option>
         <option value="old">old</option>
-       </select>
-
-       <button type:"submit">Submit</button>
-
+      </select>
+      
+      <button type:"submit">Submit</button>
+      
     </form>
     <div id="successMessage"><%= message %></div>
     
-
-
-
+    
+  </div>
+    
+    
     <script>
-        const slidingMessage = document.querySelector("#successMessage");
-        
-        async function slidingAnimation(){
-            slidingMessage.classList.add("notifySuccess");    
+      const slidingMessage = document.querySelector("#successMessage");
+      
+      async function slidingAnimation(){
+        slidingMessage.classList.add("notifySuccess");    
         //    await setTimeout(() => {
-        //        slidingMessage.classList.remove("notifySuccess")
-        //        slidingMessage.innerText="";
-        //     }, 3000);
+          //        slidingMessage.classList.remove("notifySuccess")
+          //        slidingMessage.innerText="";
+          //     }, 3000);
         }
         
         if(slidingMessage.innerHTML !==""){

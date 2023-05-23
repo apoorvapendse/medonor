@@ -30,11 +30,14 @@ form{
     justify-content: center;
     align-items: center;
     
-    background-color: rgba(0, 0, 0, 0.348);
+    background-color: rgba(0, 0, 0, 0.448);
     color: white;
     font-family: system-ui;;
-    padding:4rem;
    
+   
+}
+#donateForm{
+    padding:3rem;
 }
 form label
 {
