@@ -97,6 +97,8 @@ cursor:pointer;
 .navlist li a:hover {
   /* text-decoration: underline; */
   background-color: rgb(0, 0, 0);
+  transform: scale(1.1);
+  transform: translateY(-10px);
   color: rgb(246, 247, 248);
   box-shadow: 2px 2px 2px 2px rgb(232, 249, 250);
   
