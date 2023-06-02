@@ -89,6 +89,13 @@ app.get("/users/all", async (req, res) => {
     res.json(users);
 
 })
+app.get("/contact", (req, res) => {
+    if(!req.cookies.token)
+    {
+        res.render("login.ejs",{message:"please login first"})
+    }
+    res.render("contact.ejs");
+})
 
 app.post("/register", async (req, res) => {
     const { name, email, password } = req.body;
