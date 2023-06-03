@@ -24,7 +24,7 @@ The chat app is built using React, Firebase and Chakra-UI
 git clone https://github.com/apoorvapendse/Medonor-O9.git
 cd Medonor-O9
 ```
-- Now we have install the required dependencies using npm
+- Now install the required dependencies using npm
 ```bash
 npm i 
 ```
