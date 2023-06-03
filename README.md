@@ -1,5 +1,5 @@
 # Medonor-groupO9
-This website helps people to donate used medical equipments to NGOs and other non-profits
+This project helps people to donate used medical equipments to NGOs and other non-profits
 
 \
 The technology stack employed in this project encompasses MongoDB for the database, along with Node.js and Express for the backend.
