@@ -28,3 +28,7 @@ cd Medonor-O9
 ```bash
 npm i 
 ```
+- Now enter the command below to start the server 
+```bash
+node index.js
+```
