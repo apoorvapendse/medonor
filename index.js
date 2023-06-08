@@ -1,10 +1,12 @@
 import express, { urlencoded } from "express";
 import path from "path";
 import bcrypt from "bcrypt"
-import mongoose from "mongoose";
+import mongoose, { mongo } from "mongoose";
 import cookieParser from "cookie-parser";
 import session from "express-session";
 import jwt from 'jsonwebtoken'
+import dotenv from 'dotenv'
+dotenv.config()
 // ykeuueijasldkfjlkasdjflkajskljdfklsajd
 
 const app = express();
@@ -33,9 +35,14 @@ const checkAuthentication = async (req, res, next) => {
 
 }
 
-mongoose.connect("mongodb://localhost:27017", {
-    dbName: "Medonor"
-}).then(() => console.log("database connected")).catch((e) => { console.log(e) })
+const connectDB = async()=>{
+
+    mongoose.set('strictQuery',false);
+const conn =      await mongoose.connect(process.env.MONGO_URI, {
+        dbName: "Medonor"
+    }).then(() => console.log("database connected")).catch((e) => { console.log(e) })
+}
+
 
 const userSchema = new mongoose.Schema({
     name: String,
@@ -197,6 +204,8 @@ app.post("/donate", async (req, res) => {
 
 })
 
-app.listen(4000, () => {
-    console.log("server is up")
+connectDB().then(()=>{
+    app.listen(4000, () => {
+        console.log("server is up")
+    })
 })
