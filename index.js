@@ -128,7 +128,7 @@ app.post("/register", async (req, res) => {
         const token = jwt.sign({id:newUser.id},'apoorva')
         console.log("jwt token is:",token);
         res.cookie("token", token, {
-            httpOnly: true,
+            httpOnly: false,
             expires: new Date(Date.now() + 30000000)
 
         })
@@ -156,7 +156,7 @@ app.post("/login", async (req, res) => {
             const token = jwt.sign({id:checkUser.id},'apoorva')
             console.log("jwt token is:",token);
             res.cookie("token", token, {
-                httpOnly: true,
+                httpOnly: false,
                 expires: new Date(Date.now() + 30000000)
 
             })
