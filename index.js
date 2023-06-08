@@ -6,6 +6,7 @@ import cookieParser from "cookie-parser";
 import session from "express-session";
 import jwt from 'jsonwebtoken'
 import dotenv from 'dotenv'
+import jwt_decode from 'jwt-decode'
 dotenv.config()
 // ykeuueijasldkfjlkasdjflkajskljdfklsajd
 
@@ -91,6 +92,23 @@ app.get("/register", (req, res) => {
 app.get("/login", (req, res) => {
     res.render("login.ejs", { message: "Welcome back!" })
 })
+app.get("/donateinfo",async(req,res)=>{
+    let jwtValue = req.cookies.token;
+    // console.log(jwtValue);
+    let decodedToken = jwt_decode(jwtValue);
+    const {id} = decodedToken;
+    //using the id from the encrypted cookie, we will now fetch users data from DB
+    
+    let currentUser = await Users.findById(id);
+    console.log(currentUser)
+    res.json(currentUser.products);
+    
+
+    
+
+
+})
+
 app.get("/users/all", async (req, res) => {
     const users = await Users.find();
     res.json(users);

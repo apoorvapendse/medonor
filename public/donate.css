@@ -4,8 +4,8 @@
 
 }
 body{
-    width: 100vw;
-    height: 100vh;
+    /* width: 100vw;
+    height: 100vh; */
     display: flex;
     justify-content: center;
     align-items: center;
@@ -35,6 +35,12 @@ form{
     font-family: system-ui;;
    
    
+}
+.donationContainer{
+    display: flex;
+    flex-direction: column;
+    margin-top: 8rem;
+    /* overflow-y: scroll; */
 }
 #donateForm{
     padding:3rem;
@@ -90,4 +96,28 @@ form button:hover{
         display:none;
         
     }
+}
+.tableContainer{
+    margin-top: 2rem;
+    overflow:hidden;
+    overflow-y: scroll;
+    height: 30vh;
+   
+}
+.tableContainer::-webkit-scrollbar{
+    display: none;
+}
+
+.productsTable{
+    width: 70vh;
+    margin:20px;
+   border:1px solid white;
+   
+}
+.productsTable td{
+    padding:4px;
+    text-align: center;
+   color:yellow;
+   border: 1px solid white;
+   
 }

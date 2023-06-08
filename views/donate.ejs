@@ -64,12 +64,13 @@
     </form>
     <div id="successMessage"><%= message %></div>
     
+    <div class="tableContainer">
+
+    </div>
     
   </div>
     
-  <table id="dataTable">
-    
-  </table>
+ 
 
     
     <script>
@@ -86,13 +87,56 @@
         if(slidingMessage.innerHTML !==""){
           slidingAnimation();
         }
-        const table = document.getElementById("dataTable");
 
+
+
+
+
+       
+
+        //fetch the previously donated items by the user and display them in a table
         const getDonatedItems = async()=>{
-          console.log(document.cookie)
+
+          const container = document.querySelector(".tableContainer")
+          const table = document.createElement('table');
+          table.classList.add("productsTable")
           
+          const headingRow = document.createElement("tr")
+          headingRow.innerHTML=
+          `
+          <td>Product Name</td>
+          <td>Product Quality</td>
+          `
+         
+         
+         
+         
+          table.append(headingRow);
+         
+
+        
+
+
+          //fetching the data;
+         const response = await fetch('/donateInfo');
+        
+         const data = await response.json();
+         console.log("data",data);
+        
+         data.map((item,index)=>{
+          const newRow = document.createElement("tr");
+          newRow.innerHTML = `
+          <td>${item.equipment}</td>
+          <td>${item.quality}</td>
+          `
+          table.append(newRow)
+          
+         })
+
+         container.append(table)
+        
         }
-        getDonatedItems();
+       getDonatedItems();
 
 
 
