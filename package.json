@@ -18,7 +18,7 @@
     "express": "^4.18.2",
     "express-session": "^1.17.3",
     "jsonwebtoken": "^9.0.0",
-    "mongoose": "^7.0.3",
+    "mongoose": "^6.10.1",
     "nodemon": "^2.0.22",
     "typed.js": "^2.0.15",
     "typewriter-effect": "^2.19.0"
