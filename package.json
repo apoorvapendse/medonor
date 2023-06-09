@@ -20,6 +20,7 @@
     "jsonwebtoken": "^9.0.0",
     "jwt-decode": "^3.1.2",
     "mongoose": "^6.10.1",
+    "nodemailer": "^6.9.3",
     "nodemon": "^2.0.22",
     "typed.js": "^2.0.15",
     "typewriter-effect": "^2.19.0"

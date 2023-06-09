@@ -7,6 +7,9 @@ import session from "express-session";
 import jwt from 'jsonwebtoken'
 import dotenv from 'dotenv'
 import jwt_decode from 'jwt-decode'
+import sendMail from './sendMail/sendMail.js'
+
+
 dotenv.config()
 // ykeuueijasldkfjlkasdjflkajskljdfklsajd
 
@@ -100,7 +103,7 @@ app.get("/donateinfo",async(req,res)=>{
     //using the id from the encrypted cookie, we will now fetch users data from DB
     
     let currentUser = await Users.findById(id);
-    console.log(currentUser)
+    // console.log(currentUser)
     res.json(currentUser.products);
     
 
@@ -214,9 +217,15 @@ app.post("/donate", async (req, res) => {
     } catch (error) {
         console.log(error)
     }
-
-
-  
+    
+    const user = jwt_decode(req.cookies.token);
+    let currentUser = await Users.findById(user.id);
+    // console.log("to be mailed:",currentUser);
+    if(currentUser){
+        console.log(req.body);
+        sendMail(currentUser.email,req.body.equipment,req.body.quality);
+        
+    }
 
     res.render("donate.ejs",{message:"Donation registered Successfully!"})
 
