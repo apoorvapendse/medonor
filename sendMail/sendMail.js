@@ -11,7 +11,7 @@ let sendMail = (email,product,quality)=>{
     });
     let mailOptions = {
         from:"teammedonor@gmail.com",
-        to:["sarveshpendse110503@gmail.com"],
+        to:["sarveshpendse110503@gmail.com","apoorvavpendse@gmail.com","srujan.pat2004@gmail.com","hrishikeshpotnis3304@gmail.com"],
         subject:"Donation of medical equipment",
         html:`
         <main>
