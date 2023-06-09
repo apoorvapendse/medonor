@@ -11,7 +11,7 @@ let sendMail = (email,product,quality)=>{
     });
     let mailOptions = {
         from:"teammedonor@gmail.com",
-        to:["sarveshpendse110503@gmail.com","apoorvavpendse@gmail.com","srujan.pat2004@gmail.com","hrishikeshpotnis3304@gmail.com"],
+        to:["sarveshpendse110503@gmail.com","apoorvavpendse@gmail.com","srujan.pat2004@gmail.com","hrishikeshpotnis3304@gmail.comZ"],
         subject:"Donation of medical equipment",
         html:`
         <main>
@@ -23,7 +23,7 @@ let sendMail = (email,product,quality)=>{
         
         <span style="display: none !important;">11111</span>
         </p>
-        <p>You can visit out site by clicking <a href="https://medonor.onrender.com">Here<span style="display: none !important;">23232</span></p>
+        <p>You can visit our site by clicking <a href="https://medonor.onrender.com">Here<span style="display: none !important;">23232</span></p>
        
         </main>
         `
