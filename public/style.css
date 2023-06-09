@@ -162,7 +162,7 @@ cursor:pointer;
 .welcomeMessage{
   background-color: white;
   width: 60vw;
-  height: 60vh;
+  min-height: 60vh;
   margin:auto;
   border-radius: 17px;
   font-weight: 500;
