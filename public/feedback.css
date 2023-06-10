@@ -1,0 +1,191 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    box-sizing: border-box;
+  }
+  @import url('https://fonts.googleapis.com/css2?family=Alkatra&family=Bebas+Neue&family=Montserrat:ital@1&display=swap');
+  /* to animate on page reload */
+  
+  .container{
+  
+    animation: 1s reloadTransition;
+    height:inherit;
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: column;
+    min-height: 150vh;
+    /* background-color: transparent; */
+    /* overflow-x: hidden; */
+    /* background-color: transparent; */
+  
+  }
+  body::before{
+    content:"";
+    position:fixed;
+    background: url("https://wallpaperaccess.com/full/4425577.jpg") no-repeat ;
+    top:0;
+    left:0;
+    width:100vw;
+    min-height: 100vh;
+    background-size: cover;
+    z-index: -1;
+    opacity: 1;
+  }
+  .AboutContainer{
+    animation: 1s reloadTransition;
+  }
+  @keyframes reloadTransition {
+    from{
+      opacity: 0;
+      transform:rotateX('-10deg')
+  
+    }
+    to{
+      opacity:1;
+      transform: rotateX('0deg');
+    }
+    
+  }
+  
+  
+  nav {
+    width: 100vw;
+    position: fixed;
+    background-color: rgba(31, 31, 33, 0.307);
+    /* border: 2px solid red; */
+    height: 10vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  #heart{
+    width: 100px;
+    height: 100px;
+  }
+  .logoutBtn{
+    background-color: red;
+    color:white;
+   position:absolute;
+    right:1rem;
+    top:1%;
+    margin:12px;
+    padding:8px 14px;
+  transition:0.3s all;
+  cursor:pointer;
+  }
+  .logoutBtn:hover{
+    color:black;
+    background-color: rgb(247, 167, 167);
+  }
+  .icon{
+    background-color: white;
+    position: absolute;
+    left:10px;
+    width: inherit;
+    height: inherit;
+    border-radius: 100%;
+  }
+  .navlist {
+    color: white;
+    list-style: none;
+    display: flex;
+  }
+  .navlist li a {
+    color: rgb(255, 255, 255);
+    font-weight: 550;
+    font-size: 1rem;
+    font-weight: bold;
+    padding: 10px 2rem;
+    border-radius: 7px;
+    text-decoration: none;
+    cursor: pointer;
+    margin:0px 3rem;
+    transition: all 0.4s;
+    display: inline-block;
+  }
+  
+  .navlist li a:hover {
+    /* text-decoration: underline; */
+    background-color: rgb(0, 0, 0);
+   transform: translateY(-20px);
+   transform: scale(1.1);
+    color: rgb(246, 247, 248);
+    box-shadow: 2px 2px 2px 2px rgb(232, 249, 250);
+    
+  }
+  .activeLink{
+    color:black;
+    background-color: rgb(0, 184, 245);
+    box-shadow: 2px 2px 2px 2px white
+    ;
+    font-weight: bold;
+    text-decoration: underline;
+  }
+  
+  
+*{
+    padding:0;
+    margin:0;
+    box-sizing:border-box;
+}
+.wrappper {
+    max-width: 75%;
+    margin: auto;
+    height: 100%;
+  }
+
+.wrapper > p, .wrapper>h1{
+  margin:1.5rem 0;
+  text-align:center;
+
+}
+.wrapper >h1{
+    letter-spacing: 3px;
+}
+.accordian{
+    background-color:rgba(247, 247, 247, 0.118);
+    color:rgb(255, 255, 255);
+    cursor: pointer;
+    font-size:1.2rem;
+    width:100%;
+    padding:2rem 2.5rem;
+    border:none;
+    outline:none;
+    transition:0.4s;
+    display:flex;
+    justify-content: space-between;
+    align-items:center;
+    font-weight:bold;
+}
+
+.accordian i{
+    font-size: 1.6rem;
+}
+
+.active ,.accordian:hover{
+    background-color: rgba(136, 7, 138, 0.106);
+}
+
+.panel{
+    padding:0 18px;
+    background-color: white;
+    display:none;
+    overflow:hidden;
+    background-color: #f1f7f5;
+    padding:0 2rem 2.5rem 2rem;
+}
+
+.panel p{
+    color:rgba(0,0,0,0.7);
+    font-size:1.2rem;
+    line-height:1.4;
+}
+
+.faq{
+    border :1px solid rgba(0,0,0,0.1);
+    margin:10px 0;
+}
+.faq.active{
+    border:none;
+}
