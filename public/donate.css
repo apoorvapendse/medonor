@@ -115,9 +115,15 @@ form button:hover{
    
 }
 .productsTable td{
-    padding:4px;
+    padding:14px;
     text-align: center;
    color:yellow;
    border: 1px solid white;
    
+}
+
+.tableHeading{
+    font-size: large;
+    font-weight: bold;
+    padding:24px;
 }

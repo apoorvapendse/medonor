@@ -162,12 +162,16 @@
 .accordian i{
     font-size: 1.6rem;
     z-index: 3;
+    
 }
 
 .active ,.accordian:hover{
     background-color: rgba(136, 7, 138, 0.106);
 }
 
+.faq .panel{
+  display: none;
+}
 .panel{
     padding:0 18px;
     background-color: white;
@@ -175,7 +179,7 @@
     overflow:hidden;
     background-color: #f1f7f5;
     padding:0 2rem 2.5rem 2rem;
-    transition: all 1s;
+    transition: all 0.4s;
     animation:0.4s slideDown ease-in-out alternate;
    
 }
@@ -192,7 +196,9 @@
 .faq{
     border :1px solid rgba(0,0,0,0.1);
     margin:10px 0;
+    
 }
+
 .faq.active{
     border:none;
    
