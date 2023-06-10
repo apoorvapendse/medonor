@@ -89,6 +89,13 @@ app.get("/about", (req, res) => {
     }
     res.render("about.ejs");
 })
+app.get("/feedback", (req, res) => {
+    if(!req.cookies.token)
+    {
+        res.render("login.ejs",{message:"please login first"})
+    }
+    res.render("feedback.ejs");
+})
 app.get("/register", (req, res) => {
     res.render("register.ejs", { message: "WELCOME TO MEDONOR!!!" });
 })
