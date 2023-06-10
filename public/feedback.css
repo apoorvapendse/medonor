@@ -161,6 +161,7 @@
 
 .accordian i{
     font-size: 1.6rem;
+    z-index: 3;
 }
 
 .active ,.accordian:hover{
@@ -174,12 +175,18 @@
     overflow:hidden;
     background-color: #f1f7f5;
     padding:0 2rem 2.5rem 2rem;
+    transition: all 1s;
+    animation:0.4s slideDown ease-in-out alternate;
+   
 }
+
+
 
 .panel p{
     color:rgba(0,0,0,0.7);
     font-size:1.2rem;
     line-height:1.4;
+   
 }
 
 .faq{
@@ -188,4 +195,34 @@
 }
 .faq.active{
     border:none;
+   
+    
+    }
+
+    .disappear{
+     animation:disappear 0.4s;
+     top:-1rem;
+     z-index: -100;
+    }
+
+@keyframes slideDown {
+    from{
+      opacity:0;
+      position: relative;
+      top:-1rem;
+
+    }
+    to{
+      opacity: 1;
+      position: relative;
+      top:0rem;
+    }
+}
+
+@keyframes disappear {
+  to{
+    opacity: 0;
+    top:-1rem;
+  }
+  
 }

@@ -62,7 +62,7 @@
                     <div class="panel">
                         <p>
                             The types of medical equipment accepted for donation
-                            are typically accepted include hospital beds, wheelchairs, walkers, crutches, 
+                            typically include hospital beds, wheelchairs, walkers, crutches, 
                         </p>
                     </div>
             </div>
@@ -73,40 +73,24 @@
                     </button>
                     <div class="panel">
                         <p>
-                            You can donate your medical equipment by contacting us and 
-                            also registering to our website will ensure your donation.
+                            All you have to do is go on the donate tab and select the equipment from the menu you want to donate
                         </p>
                     </div>
             </div>
             <div class="faq">
                 <button class="accordian">
-                    Is there a specific process I need to follow to donate my equipment?
+                   What happens when i register some item for donation?
                     <i class="fa-solid fa-chevron-down"></i>
                     </button>
                     <div class="panel">
                         <p>
-                            The process for donating medical equipment is 
-                            that  you will need to fill out a donation form,by registering to our website,
-                             provide information about the equipment you wish
-                              to donate, and arrange for pick-up or drop-off.
+                            We will send a mail to all the relevant NGOs regarding your willingness to donate the given item<br>
+                            We will also attach your email-id in the donation mails<br>
+                            You will hear back from the NGOs which are interested in accepting your donation.
                         </p>
                     </div>
             </div>
-            <div class="faq">
-                <button class="accordian">
-                    How does the donation process work?
-
-                    <i class="fa-solid fa-chevron-down"></i>
-                    </button>
-                    <div class="panel">
-                        <p>
-                            The donation process typically involves contacting the organization 
-                            or program, filling out a donation form, providing information about
-                             the equipment, and arranging for pick-up or drop-off. The equipment is
-                              then processed, cleaned, and distributed to  individuals in need.
-                        </p>
-                    </div>
-            </div>
+            
             <div class="faq">
                 <button class="accordian">
                     What happens to the equipment after it is donated?
@@ -140,10 +124,7 @@
                     </button>
                     <div class="panel">
                         <p>
-                            To ensure that your donated equipment is put to good use,
-                            You can  ask for information about how the equipment
-                             will be distributed and used, and request updates or feedback
-                              about the impact of your donation.
+                           You can contact the NGO you have donated the equipment to for further details.<br>Our job is to link you and the organizations that distribute these equipments to the end user
                         </p>
                     </div>
             </div>
@@ -160,9 +141,20 @@
                        var panel=this.nextElementSibling;
                        if(panel.style.display=="block")
                        {
-                          panel.style.display="none";
+                         
+                         panel.style.display="inline-block";
+                          panel.style.opacity="0";
+                          panel.style.position="relative";
+                          panel.style.top="-1rem";
+
+                         
+                          
                        }else{
                           panel.style.display="block";
+                          panel.style.opacity="1";
+                          panel.style.position="relative";
+                          panel.style.top="0rem";
+                         
                        }
                   });
                 }
