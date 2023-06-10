@@ -47,7 +47,7 @@ const conn =      await mongoose.connect(process.env.MONGO_URI, {
     }).then(() => console.log("database connected")).catch((e) => { console.log(e) })
 }
 
-
+//we use mongoose as a module to make use of MongoDB in nodejs
 const userSchema = new mongoose.Schema({
     name: String,
     email: String,
