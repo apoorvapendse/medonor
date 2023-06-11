@@ -23,7 +23,7 @@
   body::before{
     content:"";
     position:fixed;
-    background: url("https://wallpaperaccess.com/full/4425577.jpg") no-repeat ;
+    background: url("./images/mountain2.jpeg") no-repeat ;
     top:0;
     left:0;
     width:100vw;
