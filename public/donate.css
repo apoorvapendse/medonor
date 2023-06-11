@@ -24,6 +24,18 @@ body{
         }
         
       }
+      body::before{
+        content:"";
+        position:fixed;
+        background: url("./images/mountain2.jpeg") no-repeat ;
+        top:0;
+        left:0;
+        width:100vw;
+        min-height: 100vh;
+        background-size: cover;
+        z-index: -1;
+        opacity: 1;
+      }
 form{
     display: flex;
     flex-direction: column;

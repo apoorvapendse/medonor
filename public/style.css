@@ -37,18 +37,7 @@
   min-height: 100%;
   z-index: -122;
 }
-/* body::before{
-  content:"";
-  position:fixed;
-  background: url("./images/mountain2.jpeg") no-repeat ;
-  top:0;
-  left:0;
-  width:100vw;
-  min-height: 100vh;
-  background-size: cover;
-  z-index: -1;
-  opacity: 1;
-} */
+
 .AboutContainer{
   animation: 1s reloadTransition;
 }
@@ -284,13 +273,12 @@ cursor:pointer;
   height: 10vh;
 }
 #welcomeHome{
-  color: whitesmoke;
+  
   font-size: 6rem;
   text-align: center;
   margin:10px;
   font-style:italic;
-  background-color: #0094e966;
-background-image: linear-gradient(160deg, #0094e990 0%, #80d0c77d 100%);
+
 padding:40px;
 font-weight: bold;
 border-radius: 5px;;
@@ -303,6 +291,17 @@ border-radius: 5px;;
   animation-duration: 2s;
   /* margin-bottom: 120px;; */
   margin-left: 29px;
+  transition:1s all;
+  color: white;
+
+  color: #fff;
+
+  text-shadow: 3px 3px 20px #51e2f5,
+      -2px 1px 30px #51e2f5;
+      cursor: pointer;
+}
+#welcomeHome:hover{
+opacity:0;
 }
 @keyframes leftIn {
     0%{
