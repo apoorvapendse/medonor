@@ -16,18 +16,22 @@
     
   </head>
   <body>
-    <video autoplay loop plays-inline src="https://www.vecteezy.com/video/2184312-vanessa-cardui-butterfly-in-nature-on-yellow-flowers">
-      
+  
+   <div class="fullContainer">
+
+
+    <video autoplay muted loop id="myVideo">
+      <source src="images/homevideo1.mp4" type="video/mp4">
     </video>
-   
-    <header>
-      
-      <nav>
-        <img id="heart" src="https://cdn-icons-gif.flaticon.com/6449/6449707.gif" alt="" srcset="" height="100px" width="100px" class="icon" >
-        <ul class="navlist">
-          <li><a href="/home" class="activeLink"> Home </a></li>
-          <li>
-            <a href="/about"> About </a>
+
+     <header>
+       
+       <nav>
+         <img id="heart" src="https://cdn-icons-gif.flaticon.com/6449/6449707.gif" alt="" srcset="" height="100px" width="100px" class="icon" >
+         <ul class="navlist">
+           <li><a href="/home" class="activeLink"> Home </a></li>
+           <li>
+             <a href="/about"> About </a>
           </li>
           <li>
             <a href="/feedback"> FAQ's </a>
@@ -56,9 +60,8 @@
     
     <div class="container">
     <main class="imageSlider">
-      <h1 id="welcomeHome">WELCOME TO MEDONOR</h1>
-      <div id="typedText"></div>
-
+      <h1 id="welcomeHome">WELCOME<br> TO<br> MEDONOR</h1>
+      
       <div class="swiper">
         <!-- Additional required wrapper -->
         <div class="swiper-wrapper">
@@ -88,7 +91,9 @@
     
     
   </div>
-
+  <div id="typedText"></div>
+  
+</div>
     <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
     <script>
       
@@ -100,13 +105,13 @@
           delay:2000,
           disableOnInteraction:false
         },
-      // If we need pagination
-      pagination: {
-        el: '.swiper-pagination',
-        clickable:true,
-      },
-    
-      // Navigation arrows
+        // If we need pagination
+        pagination: {
+          el: '.swiper-pagination',
+          clickable:true,
+        },
+        
+        // Navigation arrows
       navigation: {
         nextEl: '.swiper-button-next',
         prevEl: '.swiper-button-prev',
@@ -130,17 +135,17 @@ var typewriter = new Typewriter(app, {
 
 typewriter
   .pauseFor(0)
-  .typeString('Giving <strong style="font-size:2.2rem;color:yellow;background-color:black;font-weight:bold ">hope</strong>, one <strong style="font-size:2.2rem;color:green;background-color:white;font-weight:bold">equipment</strong> at a time!')
+  .typeString('Giving <strong style="font-size:2rem;color:yellow;background-color:black;font-weight:bold ">hope</strong>, one <strong style="font-size:2rem;color:green;background-color:white;font-weight:bold">equipment</strong> at a time!')
   .pauseFor(500)
   .deleteAll(37)
-  .typeString('Donate <strong style="font-weight:bold;color:red;font-size:2.2rem background-color:white ">TODAY</strong>, heal a <strong style="font-size:2.2rem;color:green;" >L</strong><strong style="font-size:2.2rem;color:blueviolet" >I</strong><strong style="font-size:2.2rem;color:yellow">F</strong><strong style="font-size:2.2rem;color:red">E</strong> tomorrow.')
+  .typeString('Donate <strong style="font-weight:bold;color:red;font-size:2rem background-color:white ">TODAY</strong>, heal a <strong style="font-size:2rem;color:green;" >L</strong><strong style="font-size:2rem;color:blueviolet" >I</strong><strong style="font-size:2rem;color:yellow">F</strong><strong style="font-size:2rem;color:red">E</strong> tomorrow.')
   .pauseFor(500)
   .deleteAll(28)
   
   .start();
 
 
-
+  
 </script>
 
 

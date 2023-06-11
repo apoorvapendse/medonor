@@ -4,6 +4,7 @@
   font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
   box-sizing: border-box;
 }
+@import url('https://fonts.googleapis.com/css2?family=Bangers&family=Lato&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Alkatra&family=Bebas+Neue&family=Montserrat:ital@1&display=swap');
 /* to animate on page reload */
 
@@ -14,14 +15,29 @@
   display: flex;
   justify-content: space-evenly;
   flex-direction: column;
-  min-height: 150vh;
+  max-height: 100vh;
   /* background-color: transparent; */
   /* overflow-x: hidden; */
   /* background-color: transparent; */
 
 }
+.imageSlider{
+  max-height: 100vh;
 
-body::before{
+  margin-top:18vh;
+  display:flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+#myVideo {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  width:100vw;
+  min-height: 100%;
+  z-index: -122;
+}
+/* body::before{
   content:"";
   position:fixed;
   background: url("./images/mountain2.jpeg") no-repeat ;
@@ -32,7 +48,7 @@ body::before{
   background-size: cover;
   z-index: -1;
   opacity: 1;
-}
+} */
 .AboutContainer{
   animation: 1s reloadTransition;
 }
@@ -53,7 +69,7 @@ body::before{
 nav {
   width: 100vw;
   position: fixed;
-  background-color: rgba(31, 31, 33, 0.307);
+  background-color: rgba(146, 146, 214, 0.507);
   /* border: 2px solid red; */
   height: 10vh;
   display: flex;
@@ -61,8 +77,8 @@ nav {
   align-items: center;
 }
 #heart{
-  width: 100px;
-  height: 100px;
+  width: 70px;
+  height: 70px;
 }
 .logoutBtn{
   background-color: red;
@@ -132,12 +148,22 @@ cursor:pointer;
   background-color: white
   ;
   width:54vw;
-  margin:2rem auto;
+  margin:1rem auto;
+  margin-bottom: 3rem;
   border-radius: 12px;
-  padding:20px 0px;
-  
+  padding:10px 0px;
+  animation:slideUp 4s;
 }
-
+@keyframes slideUp {
+  from{
+    opacity:0;
+    bottom:-200px;
+  }
+  to{
+    opacity: 1;
+    bottom:0;
+  }
+}
 
 .welcomeSection{
   
@@ -212,9 +238,10 @@ cursor:pointer;
 
 
 .swiper-wrapper{
-  height: 80vh;
+  height: 70vh;
   width: 50vw;
 }
+
 
 .swiper-slide
 {
@@ -258,11 +285,36 @@ cursor:pointer;
 }
 #welcomeHome{
   color: whitesmoke;
-  font-size: 4rem;
+  font-size: 6rem;
   text-align: center;
   margin:10px;
   font-style:italic;
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  background-color: #0094e966;
+background-image: linear-gradient(160deg, #0094e990 0%, #80d0c77d 100%);
+padding:40px;
+font-weight: bold;
+border-radius: 5px;;
+  
+  font-family: 'Bangers', cursive;
+  animation-name: leftIn;
+  /* animation-delay: 1s; */
+  animation-timing-function:ease
+  ;
+  animation-duration: 2s;
+  /* margin-bottom: 120px;; */
+  margin-left: 29px;
+}
+@keyframes leftIn {
+    0%{
+      position:relative;
+      left:-400px;
+      opacity:0;
+    }
+    100%{
+      position:relative;
+      left:0px;
+      opacity:1;
+    }
 }
 
 .donationContainer{
