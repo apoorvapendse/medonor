@@ -20,14 +20,8 @@
   /* background-color: transparent; */
 
 }
-#myVideo {
-  position: fixed;
-  right: 0;
-  bottom: 0;
-  min-width: 100%;
-  min-height: 100%;
-}
-/* body::before{
+
+body::before{
   content:"";
   position:fixed;
   background: url("./images/mountain2.jpeg") no-repeat ;
@@ -38,7 +32,7 @@
   background-size: cover;
   z-index: -1;
   opacity: 1;
-} */
+}
 .AboutContainer{
   animation: 1s reloadTransition;
 }
