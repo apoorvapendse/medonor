@@ -9,8 +9,8 @@ For the frontend, EJS, CSS, and JS are utilized to deliver a seamless user exper
 \
 The chat app is built using React, Firebase and Chakra-UI
 
-#Demo 
-[![Watch the video]](https://youtu.be/T-D1KVIuvjA)
+# Demo 
+[Watch the video](https://youtu.be/T-D1KVIuvjA)
 
 
 
