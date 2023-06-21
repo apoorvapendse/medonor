@@ -11,6 +11,14 @@ The chat app is built using React, Firebase and Chakra-UI
 
 
 
+
+
+
+
+
+
+
+
 ## Make sure you have these Dependencies installed:
 - [MongoDB](https://www.mongodb.com/docs/manual/administration/install-community/)
 - [Node.js](https://nodejs.org/en/download)
