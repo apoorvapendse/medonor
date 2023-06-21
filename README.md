@@ -9,6 +9,14 @@ For the frontend, EJS, CSS, and JS are utilized to deliver a seamless user exper
 \
 The chat app is built using React, Firebase and Chakra-UI
 
+![Alt text](/README_ASSETS/medonorFinal.mp4)
+
+
+
+
+
+
+
 
 
 ## Make sure you have these Dependencies installed:
