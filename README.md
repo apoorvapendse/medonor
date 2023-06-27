@@ -8,6 +8,7 @@ For the frontend, EJS, CSS, and JS are utilized to deliver a seamless user exper
 \
 \
 The chat app is built using React, Firebase and Chakra-UI
+We used Gmail SMTP server for sending mails to NGOs
 
 # Demo 
 [Watch the video](https://youtu.be/xEHCAA5mLPU)
